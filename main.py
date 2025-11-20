@@ -141,11 +141,11 @@ def ensure_seed_data():
 ensure_seed_data()
 
 # --------- Health/Test ---------
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def read_root():
     return {"message": "SignifyLearn API running"}
 
-@app.get("/test")
+@app.api_route("/test", methods=["GET", "HEAD"])
 def test_database():
     response = {
         "backend": "✅ Running",
